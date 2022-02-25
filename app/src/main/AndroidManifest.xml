@@ -4,11 +4,39 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_main_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_main_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyAppProject">
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+        <activity
+            android:name=".activity.ReportLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LevelTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ManageItemListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LevelTabActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SelectLevelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.InfoMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.TelMainActivity"
+            android:exported="false" />
+        <!--
+        android:theme="@style/Theme.MyAppProject"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        -->
+        <activity
+            android:name=".activity.LevelMainActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">
