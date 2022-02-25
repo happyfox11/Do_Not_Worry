@@ -28,7 +28,7 @@ public class TabTwoFragment extends Fragment
 {
     private ArrayList<String> itemList;
     private Button btn_complete;
-    private Button btn_new;
+    private Button btn_new2;
     private int i = 0;
 
     @Override
@@ -36,7 +36,7 @@ public class TabTwoFragment extends Fragment
     {
         View v = inflater.inflate(R.layout.fragment_tab_two, container, false);
 
-        btn_new = v.findViewById(R.id.btn_new);
+        btn_new2 = v.findViewById(R.id.btn_new2);
         btn_complete = v.findViewById(R.id.btn_complete);
 
         LinearLayout layout = v.findViewById(R.id.layout_list);
@@ -85,7 +85,7 @@ public class TabTwoFragment extends Fragment
             layout.addView(textView);
 
             btn_complete.setVisibility(View.GONE);
-            btn_new.setVisibility(View.VISIBLE);
+            btn_new2.setVisibility(View.VISIBLE);
         }
 
         btn_complete.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +113,7 @@ public class TabTwoFragment extends Fragment
             }
         });
 
-        btn_new.setOnClickListener(new View.OnClickListener() {
+        btn_new2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), ManageItemListActivity.class);
