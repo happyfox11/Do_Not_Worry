@@ -1,6 +1,5 @@
 package com.android.myappproject.fragment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,10 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.android.myappproject.R;
 import com.android.myappproject.activity.LevelMainActivity;
-import com.android.myappproject.activity.LevelTabActivity;
 import com.android.myappproject.activity.ManageItemListActivity;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
