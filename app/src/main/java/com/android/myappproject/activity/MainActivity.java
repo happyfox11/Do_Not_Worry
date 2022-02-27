@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.myappproject.R;
@@ -34,9 +35,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 public class MainActivity extends AppCompatActivity {
-    public static final int RESULT_CODE_LOGOUT = 1002;
-
-    private FirebaseAuth firebaseAuth;
 
     private Activity activity;
     private Button btn_login;
@@ -49,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar tb_navi;
 
     private NavigationView nv_navi;
-
-    private ActivityResultLauncher<Intent> resultLauncher;
 
 
     @Override
@@ -72,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         activity = this;
-        firebaseAuth = FirebaseAuth.getInstance();
+
         btn_login = findViewById(R.id.btn_login);
         btn_register = findViewById(R.id.btn_register);
         et_email = findViewById(R.id.et_email);
@@ -83,43 +79,21 @@ public class MainActivity extends AppCompatActivity {
         tb_navi = findViewById(R.id.tb_navi);
 
         nv_navi = findViewById(R.id.nv_navi);
+
     }
 
     private void setting() {
+
         setSupportActionBar(tb_navi);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_navi_menu);
 
-        resultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), activityResultCallback);
-
     }
 
     private void addListener() {
-        btn_login.setOnClickListener(listener_login);
-        btn_register.setOnClickListener(listener_register);
 
         nv_navi.setNavigationItemSelectedListener(listener_navi_menu_click);
     }
-
-    private final View.OnClickListener listener_login = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            String email = et_email.getText().toString();
-            String passwd = et_password.getText().toString();
-
-            signIn(email, passwd);
-        }
-    };
-
-
-    private final View.OnClickListener listener_register = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            SignUpDialog signUpDialog = new SignUpDialog(activity);
-
-            signUpDialog.show();
-        }
-    };
 
 
     private final NavigationView.OnNavigationItemSelectedListener listener_navi_menu_click = new NavigationView.OnNavigationItemSelectedListener() {
@@ -166,50 +140,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private ActivityResultCallback<ActivityResult> activityResultCallback = new ActivityResultCallback<ActivityResult>() {
-        @Override
-        public void onActivityResult(ActivityResult result) {
-            int resultCode = result.getResultCode();
-
-            if (resultCode == RESULT_CODE_LOGOUT) {
-                Toast.makeText(activity, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
-            }
-        }
-    };
-
-    private void signIn(String email, String passwd) {
-        if (email.isEmpty() || passwd.isEmpty()) {
-            Toast.makeText(activity, "이메일 또는 패스워드가 유효하지 않습니다.", Toast.LENGTH_SHORT).show();
-        } else {
-            authEmailAndPasswd(email, passwd);
-        }
-    }
-
-    private void authEmailAndPasswd(String email, String passwd) {
-        firebaseAuth.signInWithEmailAndPassword(email, passwd).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Log.i(activity.getClass().getName(), "로그인에 성공하였습니다.");
-
-                    Intent intent = new Intent(activity, LevelMainActivity.class);
-
-                    resultLauncher.launch(intent);
-                } else {
-                    Log.w(activity.getClass().getName(), "로그인에 실패하였습니다.", task.getException());
-
-                    try {
-                        throw task.getException();
-                    } catch (FirebaseAuthInvalidUserException fauEx) {
-                        Log.d(activity.getClass().getName(), "존재하지 않는 유저로 로그인하였습니다.");
-                        Toast.makeText(activity, "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show();
-                    } catch (Exception ex) {
-                        Toast.makeText(activity, "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-        });
-    }
 
 
 }

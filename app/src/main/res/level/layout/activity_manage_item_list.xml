@@ -127,6 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="#284308"
+        android:textColor="#fff"
         android:text="체크 리스트 생성하기" />
 
 </LinearLayout>

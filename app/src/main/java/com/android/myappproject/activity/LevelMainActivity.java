@@ -1,6 +1,7 @@
 package com.android.myappproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.android.myappproject.R;
+import com.android.myappproject.fragment.BarFragment;
 
 public class LevelMainActivity extends AppCompatActivity {
 
@@ -18,6 +20,8 @@ public class LevelMainActivity extends AppCompatActivity {
     private Button btn_prev_db;
     private Button btn_select_level;
     private Button btn_level_test;
+
+    private Fragment barFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +42,16 @@ public class LevelMainActivity extends AppCompatActivity {
 
     private void init(){
         activity = this;
-        btn_level_main_back = findViewById(R.id.btn_report_back);
+        btn_level_main_back = findViewById(R.id.btn_back);
         btn_prev_db = findViewById(R.id.btn_back_home);
         btn_select_level = findViewById(R.id.btn_lv2);
         btn_level_test = findViewById(R.id.btn_lv3);
+
+        barFragment = new BarFragment();
     }
 
     private void setting(){
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.layout_fragment, barFragment).commit();
     }
 
     private void addListener(){

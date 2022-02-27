@@ -2,4 +2,15 @@
     <string name="app_name">돈 워리!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">
+        ※ 확인 강박이란?\n
+        무언가를 했거나 안했는지를 자신이 확실히 했거나 안했는지 인지했음에도 불구하고 지속하여 혹시나 하는 마음에 확인하는 강박증\n\n\n
+
+        확인 강박 치료 앱 돈 워리는\n
+        ● 나의 상태 체크를 통한 맞춤 서비스 제공!\n
+        ● 일상생활에서 적용 가능한 확인 강박 치료 정보 제공!\n
+        ● 도움을 요청할 수 있는 기관 정보 제공!\n\n\n
+        ☞ 상단의 메뉴를 선택하여 원하는 기능을 지금 바로 사용해보세요!
+
+    </string>
 </resources>

@@ -54,6 +54,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:backgroundTint="#284308"
+                android:textColor="#fff"
                 android:text="1" />
 
             <TextView
@@ -84,6 +85,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:backgroundTint="#284308"
+                android:textColor="#fff"
                 android:text="2" />
 
             <TextView
@@ -114,6 +116,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:backgroundTint="#284308"
+                android:textColor="#fff"
                 android:text="3" />
 
             <TextView
@@ -144,6 +147,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:backgroundTint="#284308"
+                android:textColor="#fff"
                 android:text="4" />
 
             <TextView
@@ -174,6 +178,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:backgroundTint="#284308"
+                android:textColor="#fff"
                 android:text="5" />
 
             <TextView
@@ -204,6 +209,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:backgroundTint="#284308"
+                android:textColor="#fff"
                 android:text="6" />
 
             <TextView
@@ -233,6 +239,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
         android:backgroundTint="#284308"
+        android:textColor="#fff"
         android:text="나에게 맞는 레벨 추천받기" />
 
 </LinearLayout>
