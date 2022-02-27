@@ -2,8 +2,13 @@ package com.android.myappproject.fragment;
 
 import static java.lang.Thread.sleep;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -17,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import com.android.myappproject.R;
@@ -35,6 +41,9 @@ public class TimerFragment extends Fragment
     private HandlerTask handlerTask;
     private Timer timer = new Timer();
     private int count = 0;
+
+    private static final int NOTIFICATION_ID = 75;
+    private NotificationManager notificationManager;
 
     public class HandlerTask extends TimerTask{
 
@@ -72,6 +81,12 @@ public class TimerFragment extends Fragment
                     if(min<10) sm = "0"+sm;
                     if(sec<10) ss = "0"+ss;
 
+                    if(count == 180){
+                        NotificationCompat.Builder builder = getDefaultBuilder();
+                        notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+                        notificationManager.notify(NOTIFICATION_ID, builder.build());
+                        //Log.i("timer", "getActivity(): "+getActivity());
+                    }
                     if(count > 180){
                         tv_time.setTextColor(Color.RED);
                     }
@@ -84,6 +99,38 @@ public class TimerFragment extends Fragment
 
         }
 
+    }
+
+    private NotificationCompat.Builder getDefaultBuilder()
+    {
+        String channelID = "timeout_notification_channel";
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            if(notificationManager != null && notificationManager.getNotificationChannel(channelID) == null)
+            {
+                NotificationChannel notificationChannel = new NotificationChannel
+                        (
+                                channelID,
+                                "Timeout Notification Channel",
+                                NotificationManager.IMPORTANCE_HIGH
+                        );
+
+                notificationChannel.setDescription("시간 초과 알림 채널");
+
+                notificationManager.createNotificationChannel(notificationChannel);
+            }
+        }
+
+        NotificationCompat.Builder builder =  new NotificationCompat.Builder(getContext(), channelID);
+        builder.setSmallIcon(R.mipmap.ic_main_launcher);
+        builder.setContentTitle("목표 시간 초과");
+        builder.setDefaults(NotificationCompat.DEFAULT_ALL);
+        builder.setContentText("3분이 초과되었습니다. 다음에는 성공해봐요!");
+        builder.setAutoCancel(false);
+        builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+
+        return builder;
     }
 
     @Override
