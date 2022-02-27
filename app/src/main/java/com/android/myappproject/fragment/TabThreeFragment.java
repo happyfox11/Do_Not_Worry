@@ -149,7 +149,10 @@ public class TabThreeFragment extends Fragment
                         imageView.setImageURI(photoUri);
                         Log.i("photo", "setImage tag:"+tag);
 
-                        flag[tag] = true;
+
+                        if(imageView.getWidth() != 0){
+                            flag[tag] = true;
+                        }
                     }
                 };
                 cameraLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), cameraResultCallback);
