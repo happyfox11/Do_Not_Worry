@@ -16,7 +16,7 @@ import com.android.myappproject.fragment.BarFragment;
 public class LevelMainActivity extends AppCompatActivity {
 
     private Activity activity;
-    private ImageButton btn_level_main_back;
+    //private ImageButton btn_level_main_back;
     private Button btn_prev_db;
     private Button btn_select_level;
     private Button btn_level_test;
@@ -42,7 +42,7 @@ public class LevelMainActivity extends AppCompatActivity {
 
     private void init(){
         activity = this;
-        btn_level_main_back = findViewById(R.id.btn_back);
+        //btn_level_main_back = findViewById(R.id.btn_back);
         btn_prev_db = findViewById(R.id.btn_back_home);
         btn_select_level = findViewById(R.id.btn_lv2);
         btn_level_test = findViewById(R.id.btn_lv3);
@@ -55,18 +55,18 @@ public class LevelMainActivity extends AppCompatActivity {
     }
 
     private void addListener(){
-        btn_level_main_back.setOnClickListener(listener_back);
+        //btn_level_main_back.setOnClickListener(listener_back);
         btn_prev_db.setOnClickListener(listener_prev_db);
         btn_select_level.setOnClickListener(listener_select_level);
         btn_level_test.setOnClickListener(listener_level_test);
     }
 
-    private View.OnClickListener listener_back = new View.OnClickListener() {
+/*    private View.OnClickListener listener_back = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             finish();
         }
-    };
+    };*/
 
     private View.OnClickListener listener_prev_db = new View.OnClickListener() {
         @Override

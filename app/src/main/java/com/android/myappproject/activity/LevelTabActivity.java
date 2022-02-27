@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.android.myappproject.R;
 import com.android.myappproject.adapter.TabAdapter;
+import com.android.myappproject.fragment.BarFragment;
 import com.android.myappproject.fragment.TabOneFragment;
 import com.android.myappproject.fragment.TabThreeFragment;
 import com.android.myappproject.fragment.TabTwoFragment;
@@ -46,6 +47,7 @@ public class LevelTabActivity extends AppCompatActivity {
 
     private ArrayList<String> sendList;
 
+    private Fragment barFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -72,7 +74,7 @@ public class LevelTabActivity extends AppCompatActivity {
     {
         activity = this;
 
-        btn_back = findViewById(R.id.btn_tab_back);
+        //btn_back = findViewById(R.id.btn_tab_back);
 
         tl_tab = findViewById(R.id.tl_tab);
 
@@ -88,10 +90,14 @@ public class LevelTabActivity extends AppCompatActivity {
         tabAdapter = new TabAdapter(this, fragmentList);
 
         sendList = new ArrayList<String>();
+
+        barFragment = new BarFragment();
     }
 
     private void setting()
     {
+        getSupportFragmentManager().beginTransaction().replace(R.id.layout_fragment, barFragment).commit();
+
         receiveItemList();
 
         fragmentList.add(fragment_tab1);

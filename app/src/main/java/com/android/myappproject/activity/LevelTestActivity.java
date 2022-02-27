@@ -1,6 +1,7 @@
 package com.android.myappproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +16,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 
 import com.android.myappproject.R;
+import com.android.myappproject.fragment.BarFragment;
 
 import java.util.ArrayList;
 
@@ -24,7 +26,9 @@ public class LevelTestActivity extends AppCompatActivity {
     private TextView tv1, tv2, tv3, tv4, tv5, tv6;
     private CheckBox cb1, cb2, cb3 ,cb4, cb5, cb6;
     private Button btn_level_recommend;
-    private ImageButton btn_test_back;
+    //private ImageButton btn_test_back;
+
+    private Fragment barFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +48,7 @@ public class LevelTestActivity extends AppCompatActivity {
 
     private void init(){
         activity = this;
-        btn_test_back = findViewById(R.id.btn_test_back);
+        //btn_test_back = findViewById(R.id.btn_test_back);
 
         tv1 = (TextView) findViewById(R.id.tv1);
         tv2 = findViewById(R.id.tv2);
@@ -61,16 +65,18 @@ public class LevelTestActivity extends AppCompatActivity {
         cb6 = findViewById(R.id.cb6);
 
         btn_level_recommend = findViewById(R.id.btn_level_recommend);
+
+        barFragment = new BarFragment();
     }
 
     private void setting(){
         add_tv_contents();
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.layout_fragment, barFragment).commit();
     }
 
     private void addListener(){
         btn_level_recommend.setOnClickListener(listener_level_recommend);
-        btn_test_back.setOnClickListener(listener_back);
+        //btn_test_back.setOnClickListener(listener_back);
     }
 
     private void add_tv_contents(){
@@ -84,12 +90,12 @@ public class LevelTestActivity extends AppCompatActivity {
 
     }
 
-    private View.OnClickListener listener_back = new View.OnClickListener() {
+/*    private View.OnClickListener listener_back = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             finish();
         }
-    };
+    };*/
 
     private View.OnClickListener listener_level_recommend = new View.OnClickListener() {
         @Override

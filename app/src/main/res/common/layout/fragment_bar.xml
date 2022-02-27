@@ -31,6 +31,7 @@
         android:layout_weight="1"
         android:gravity="right|center_vertical"
         android:text="user"
+        android:textColor="#FF9800"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -40,7 +41,7 @@
         android:layout_marginRight="15dp"
         android:gravity="center_vertical"
         android:text=" 님"
-        android:textColor="#FF9800"
+        android:textColor="#1C291C"
         android:textSize="18sp"
         android:textStyle="bold" />
 
