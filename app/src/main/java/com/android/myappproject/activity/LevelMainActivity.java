@@ -83,6 +83,8 @@ public class LevelMainActivity extends AppCompatActivity {
         public void onClick(View view) {
             Intent intent = new Intent(activity, LevelTestActivity.class);
             startActivity(intent);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            finish();
         }
     };
 
