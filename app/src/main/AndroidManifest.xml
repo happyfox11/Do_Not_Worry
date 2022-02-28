@@ -3,6 +3,7 @@
     package="com.android.myappproject">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:allowBackup="true"
@@ -55,6 +56,24 @@
             android:exported="false">
 
         </activity>
+
+        <service
+            android:name=".service.LocalMusicService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.service.MUSIC" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service.RestartMusicService"
+            android:enabled="true"
+            android:exported="true" />
+
+
+        <receiver android:name=".receiver.MusicAlarmReceiver" />
+
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

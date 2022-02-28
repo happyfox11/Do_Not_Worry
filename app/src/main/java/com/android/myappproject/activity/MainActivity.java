@@ -1,9 +1,8 @@
 package com.android.myappproject.activity;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
+import static com.android.myappproject.service.LocalMusicService.FLAG_MUSIC_STOP;
+import static com.android.myappproject.service.LocalMusicService.mediaPlayer;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -13,40 +12,41 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
+
 import android.os.Bundle;
+
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
+
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.myappproject.R;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.android.myappproject.service.LocalMusicService;
+
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private Activity activity;
-    private Button btn_login;
-    private Button btn_register;
-    private EditText et_email;
-    private EditText et_password;
 
     private DrawerLayout layout_navi;
 
     private Toolbar tb_navi;
 
     private NavigationView nv_navi;
+
+    private Button btn_music_control;
+    private Boolean check = false;
+    private Intent musicIntent;
+
+    public static SeekBar sb_music;
+    public static TextView tv_current_music;
+    public static TextView tv_end_music;
 
 
     @Override
@@ -68,18 +68,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         activity = this;
-
-        btn_login = findViewById(R.id.btn_login);
-        btn_register = findViewById(R.id.btn_register);
-        et_email = findViewById(R.id.et_email);
-        et_password = findViewById(R.id.et_password);
-
         layout_navi = findViewById(R.id.layout_navi);
-
         tb_navi = findViewById(R.id.tb_navi);
-
         nv_navi = findViewById(R.id.nv_navi);
 
+        btn_music_control = findViewById(R.id.btn_music_control);
+        sb_music = findViewById(R.id.sb_music);
+        tv_current_music = findViewById(R.id.tv_current_music);
+        tv_end_music = findViewById(R.id.tv_end_music);
     }
 
     private void setting() {
@@ -93,7 +89,40 @@ public class MainActivity extends AppCompatActivity {
     private void addListener() {
 
         nv_navi.setNavigationItemSelectedListener(listener_navi_menu_click);
+        btn_music_control.setOnClickListener(listener_music_control);
     }
+
+    private View.OnClickListener listener_music_control = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if(check == false){
+                check = true;
+                btn_music_control.setText("♬ 중지");
+                checkLocalMusicIntent();
+                startService(musicIntent);
+            }else{
+                check = false;
+                btn_music_control.setText("♬ 재생");
+                checkLocalMusicIntent();
+                LocalMusicService.intent.putExtra(FLAG_MUSIC_STOP, true);
+                stopService(musicIntent);
+            }
+        }
+    };
+
+    private void checkLocalMusicIntent()
+    {
+        if(LocalMusicService.intent == null)
+        {
+            musicIntent = new Intent(LocalMusicService.ACTION_NAME);
+            musicIntent.setPackage(LocalMusicService.PACKAGE_NAME);
+        }
+        else
+        {
+            musicIntent = LocalMusicService.intent;
+        }
+    }
+
 
 
     private final NavigationView.OnNavigationItemSelectedListener listener_navi_menu_click = new NavigationView.OnNavigationItemSelectedListener() {
