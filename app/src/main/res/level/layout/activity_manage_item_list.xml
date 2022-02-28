@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#E91E63"
+            android:background="#E91E63"
             android:text="clear" />
 
     </LinearLayout>
@@ -74,7 +74,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#FFC107"
+            android:background="#FFC107"
             android:text="추가"
             android:textColor="#000000" />
 
@@ -83,7 +83,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#7AD8E4"
+            android:background="#7AD8E4"
             android:text="삭제"
             android:textColor="#000000" />
 
@@ -121,7 +121,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#284308"
+        android:background="#284308"
         android:textColor="#fff"
         android:text="체크 리스트 생성하기" />
 

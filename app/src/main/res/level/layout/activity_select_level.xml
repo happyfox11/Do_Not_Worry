@@ -42,7 +42,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:backgroundTint="#284308"
+            android:background="#284308"
             android:text="Level 1 : Easy"
             android:textColor="#fff"
             android:textSize="20sp" />
@@ -62,7 +62,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:backgroundTint="#284308"
+            android:background="#284308"
             android:textColor="#fff"
             android:text="Level 2 : Normal"
             android:textSize="20sp" />
@@ -82,7 +82,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:backgroundTint="#284308"
+            android:background="#284308"
             android:textColor="#fff"
             android:text="Level 3 : Hard"
             android:textSize="20sp" />

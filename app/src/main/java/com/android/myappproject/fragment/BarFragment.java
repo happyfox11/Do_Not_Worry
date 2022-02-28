@@ -34,7 +34,6 @@ public class BarFragment extends Fragment
         View v = inflater.inflate(R.layout.fragment_bar, container, false);
 
         activity = getActivity();
-        firebaseAuth = firebaseAuth.getInstance();
 
         btn_back= v.findViewById(R.id.btn_back);
         tv_user = v.findViewById(R.id.tv_user);
@@ -47,10 +46,18 @@ public class BarFragment extends Fragment
             }
         });
 
-        String user_email = firebaseAuth.getCurrentUser().getEmail();
-        String name = user_email.split("@")[0];
-        tv_user.setText(name);
+        try{
+            firebaseAuth = firebaseAuth.getInstance();
 
+            if(firebaseAuth != null){
+                String user_email = firebaseAuth.getCurrentUser().getEmail();
+                String name = user_email.split("@")[0];
+                tv_user.setText(name);
+            }
+
+        }catch(Exception ex){
+
+        }
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override

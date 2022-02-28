@@ -10,7 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_main_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/Theme.MyAppProject">
+
         <activity
             android:name=".activity.ReportLevelActivity"
             android:exported="false" />
@@ -33,8 +34,9 @@
             android:name=".activity.TelMainActivity"
             android:exported="false" />
         <!--
-        android:theme="@style/Theme.MyAppProject"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
+
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         -->
         <activity
             android:name=".activity.LevelMainActivity"
@@ -42,16 +44,16 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">
-
-        </activity>
-
-        <activity android:name=".activity.LoginActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.LoginActivity"
+            android:exported="false">
+
         </activity>
 
         <provider
