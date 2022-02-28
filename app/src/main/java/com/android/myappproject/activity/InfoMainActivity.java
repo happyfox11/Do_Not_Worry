@@ -1,6 +1,7 @@
 package com.android.myappproject.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.ProgressBar;
 
 import com.android.myappproject.R;
 import com.android.myappproject.adapter.InfoPagerAdapter;
+import com.android.myappproject.fragment.BarFragment;
 import com.android.myappproject.fragment.Info1_Fragment;
 import com.android.myappproject.fragment.Info2_Fragment;
 import com.android.myappproject.fragment.Info3_Fragment;
@@ -35,6 +37,8 @@ public class InfoMainActivity extends AppCompatActivity {
 
     private ProgressBar pg_bar;
     private int value=100/6;
+
+    private Fragment barFragment;
 
 
     @Override
@@ -69,9 +73,13 @@ public class InfoMainActivity extends AppCompatActivity {
         btn_next_info=findViewById(R.id.btn_next_info);
 
         pg_bar = findViewById(R.id.pg_bar);
+
+        barFragment = new BarFragment();
     }
 
     private void setting(){
+        getSupportFragmentManager().beginTransaction().replace(R.id.layout_fragment, barFragment).commit();
+
         pager.setOffscreenPageLimit(3);
 
         infoPagerAdapter.addItem(info1_Fragment);
