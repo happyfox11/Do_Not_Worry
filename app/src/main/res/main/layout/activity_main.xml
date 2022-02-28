@@ -146,6 +146,7 @@
         android:layout_width="200dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="#D0E6B7"
         app:headerLayout="@layout/nav_item"
         app:menu="@menu/menu_item" />
 

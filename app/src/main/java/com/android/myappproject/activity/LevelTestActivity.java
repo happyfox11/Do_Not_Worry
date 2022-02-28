@@ -114,6 +114,7 @@ public class LevelTestActivity extends AppCompatActivity {
             Intent intent = new Intent(activity, ReportLevelActivity.class);
             intent.putExtra("lv_num", result);
             startActivity(intent);
+            finish();
         }
     };
 

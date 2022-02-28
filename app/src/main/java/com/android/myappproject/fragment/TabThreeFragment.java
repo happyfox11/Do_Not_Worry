@@ -183,6 +183,7 @@ public class TabThreeFragment extends Fragment
                 if(next == true){
                     Intent intent = new Intent(getContext(), LevelMainActivity.class);
                     startActivity(intent);
+                    getActivity().finish();
                 }else{
                     Toast.makeText(getContext(),"확인되지 않은 항목이 존재합니다.", Toast.LENGTH_SHORT).show();
                 }
@@ -195,6 +196,7 @@ public class TabThreeFragment extends Fragment
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), ManageItemListActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

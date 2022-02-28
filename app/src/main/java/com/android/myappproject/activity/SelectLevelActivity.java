@@ -92,6 +92,7 @@ public class SelectLevelActivity extends AppCompatActivity {
             intent.putExtra("level", 1);
             intent.putStringArrayListExtra("itemList",sendList);
             startActivity(intent);
+            finish();
         }
     };
 
@@ -102,6 +103,7 @@ public class SelectLevelActivity extends AppCompatActivity {
             intent.putExtra("level", 2);
             intent.putStringArrayListExtra("itemList",sendList);
             startActivity(intent);
+            finish();
         }
     };
 
@@ -112,6 +114,7 @@ public class SelectLevelActivity extends AppCompatActivity {
             intent.putExtra("level", 3);
             intent.putStringArrayListExtra("itemList",sendList);
             startActivity(intent);
+            finish();
         }
     };
 }

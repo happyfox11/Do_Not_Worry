@@ -60,6 +60,7 @@ public class TabOneFragment extends Fragment
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), LevelMainActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 
@@ -68,6 +69,7 @@ public class TabOneFragment extends Fragment
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), ManageItemListActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

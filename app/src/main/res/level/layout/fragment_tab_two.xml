@@ -33,6 +33,8 @@
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:text="아래의 체크리스트의 각각의 항목에 대해 눈으로 확인하고, 우측의 체크박스에 체크합니다. 모두 체크를 한 후에 '모든 확인 완료' 버튼을 누릅니다." />
 
             <LinearLayout
@@ -51,6 +53,8 @@
                 android:layout_marginTop="50dp"
                 android:background="#284308"
                 android:textColor="#fff"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:text="모든 확인 완료!" />
 
             <Button
@@ -60,6 +64,8 @@
                 android:background="#284308"
                 android:text="체크 리스트 생성하러가기"
                 android:textColor="#fff"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:visibility="gone" />
 
         </LinearLayout>

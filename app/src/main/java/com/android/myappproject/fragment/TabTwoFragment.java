@@ -108,6 +108,7 @@ public class TabTwoFragment extends Fragment
                 if(flag){
                     Intent intent = new Intent(getContext(), LevelMainActivity.class);
                     startActivity(intent);
+                    getActivity().finish();
                 }
 
             }
@@ -118,6 +119,7 @@ public class TabTwoFragment extends Fragment
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), ManageItemListActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

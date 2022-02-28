@@ -199,6 +199,8 @@ public class ManageItemListActivity extends AppCompatActivity
             startActivity(intent);
 
             sendList.clear();
+
+            finish();
         }
     };
 }

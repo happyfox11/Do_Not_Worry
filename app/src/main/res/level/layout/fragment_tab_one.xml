@@ -36,6 +36,8 @@
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:text="눈으로 모든 확인 리스트의 내용들을 확실히 확인한 후, '모든 확인 완료' 버튼을 누릅니다." />
 
             <LinearLayout
@@ -54,6 +56,8 @@
                 android:layout_marginTop="50dp"
                 android:background="#284308"
                 android:textColor="#fff"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:text="모든 확인 완료!" />
 
             <Button
@@ -62,6 +66,8 @@
                 android:layout_height="wrap_content"
                 android:background="#284308"
                 android:text="체크 리스트 생성하러가기"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:textColor="#fff"
                 android:visibility="gone" />
 

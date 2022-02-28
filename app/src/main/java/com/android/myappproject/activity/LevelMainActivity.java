@@ -41,7 +41,7 @@ public class LevelMainActivity extends AppCompatActivity {
 
     private void init(){
         activity = this;
-        //btn_level_main_back = findViewById(R.id.btn_back);
+
         btn_prev_db = findViewById(R.id.btn_lv1);
         btn_select_level = findViewById(R.id.btn_lv2);
         btn_level_test = findViewById(R.id.btn_lv3);
@@ -54,18 +54,12 @@ public class LevelMainActivity extends AppCompatActivity {
     }
 
     private void addListener(){
-        //btn_level_main_back.setOnClickListener(listener_back);
+
         btn_prev_db.setOnClickListener(listener_prev_db);
         btn_select_level.setOnClickListener(listener_select_level);
         btn_level_test.setOnClickListener(listener_level_test);
     }
 
-/*    private View.OnClickListener listener_back = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            finish();
-        }
-    };*/
 
     private View.OnClickListener listener_prev_db = new View.OnClickListener() {
         @Override
@@ -79,6 +73,8 @@ public class LevelMainActivity extends AppCompatActivity {
         public void onClick(View view) {
             Intent intent = new Intent(activity, ManageItemListActivity.class);
             startActivity(intent);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            finish();
         }
     };
 
