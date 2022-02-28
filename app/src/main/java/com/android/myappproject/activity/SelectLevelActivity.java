@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -14,7 +13,6 @@ import android.widget.ImageButton;
 import com.android.myappproject.R;
 import com.android.myappproject.fragment.BarFragment;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class SelectLevelActivity extends AppCompatActivity {
@@ -49,7 +47,7 @@ public class SelectLevelActivity extends AppCompatActivity {
     private void init(){
         activity = this;
         //btn_back = findViewById(R.id.btn_test_back);
-        btn_lv1 = findViewById(R.id.btn_back_home);
+        btn_lv1 = findViewById(R.id.btn_lv1);
         btn_lv2 = findViewById(R.id.btn_lv2);
         btn_lv3 = findViewById(R.id.btn_lv3);
 

@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.android.myappproject.R;
 import com.android.myappproject.fragment.BarFragment;
@@ -42,7 +41,7 @@ public class ReportLevelActivity extends AppCompatActivity {
         activity = this;
         //btn_report_back = findViewById(R.id.btn_back);
         btn_lv_num = findViewById(R.id.btn_lv_num);
-        btn_back_home = findViewById(R.id.btn_back_home);
+        btn_back_home = findViewById(R.id.btn_lv1);
 
         barFragment = new BarFragment();
     }
