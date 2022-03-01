@@ -4,6 +4,7 @@ import static com.android.myappproject.activity.MainActivity.sb_music;
 import static com.android.myappproject.activity.MainActivity.tv_current_music;
 import static com.android.myappproject.activity.MainActivity.tv_end_music;
 
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -12,12 +13,16 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.View;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.android.myappproject.R;
+import com.android.myappproject.activity.MainActivity;
 import com.android.myappproject.receiver.MusicAlarmReceiver;
 
 import java.util.Calendar;
+import java.util.TimerTask;
 
 public class LocalMusicService extends Service
 {
@@ -31,7 +36,8 @@ public class LocalMusicService extends Service
 
     public static final String FLAG_MUSIC_STOP = "MUSIC_EXIT_FLAG";
 
-    private int cnt=0;
+    private Thread setTimeThread;
+
 
     @Override
     public IBinder onBind(Intent intent)
@@ -57,14 +63,14 @@ public class LocalMusicService extends Service
     {
         this.intent = intent;
 
-        if(mediaPlayer != null && mediaPlayer.isPlaying() == false)
+        if(mediaPlayer != null && mediaPlayer.isPlaying() == false)//음악이 재생중이지 않다면
         {
-           // mediaPlayer.start(); //생성해준 미디어 플레이어를 실행해준다
+            mediaPlayer.setLooping(true);
+            mediaPlayer.start(); //생성해준 미디어 플레이어를 실행해준다
 
             sb_music.setMax(mediaPlayer.getDuration());
             //tv_end_music.setText(String.valueOf(mediaPlayer.getDuration()/1000));
-            tv_end_music.setText(String.valueOf(mediaPlayer.getDuration()/(1000*60))+":"+String.valueOf((mediaPlayer.getDuration()/1000)%60));
-
+            tv_end_music.setText(String.valueOf(mediaPlayer.getDuration() / (1000 * 60)) + ":" + String.valueOf((mediaPlayer.getDuration() / 1000) % 60));
 
             sb_music.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
@@ -79,26 +85,31 @@ public class LocalMusicService extends Service
             });
 
 
-            mediaPlayer.setLooping(true);
-            mediaPlayer.start();
+            //mediaPlayer.setLooping(true);
+            //mediaPlayer.start();
 
-            new Thread(new Runnable(){
+            setTimeThread =  new Thread(new Runnable(){
                 @Override
                 public void run() {
                     while(mediaPlayer.isPlaying()){
                         try{
                             Thread.sleep(1000);
-                            cnt++;
+                        } catch(InterruptedException iex){
+                            //interrupt를 통해 종료시킨 경우 이 예외에 걸려서 종료된다.
+                            Log.i("스레드", "Thread 종료");
+                            break;
                         } catch(Exception e){
                             e.printStackTrace();
                         }
+                        int cp = mediaPlayer.getCurrentPosition();
 
                         //tv_current_music.setText(String.valueOf(mediaPlayer.getCurrentPosition()/1000));
-                        tv_current_music.setText(String.valueOf(mediaPlayer.getCurrentPosition()/(1000*60))+":"+String.valueOf((mediaPlayer.getCurrentPosition()/1000)%60));
-                        sb_music.setProgress(mediaPlayer.getCurrentPosition());
+                        tv_current_music.setText(String.valueOf(cp/(1000*60))+":"+String.valueOf((cp/1000)%60));
+                        sb_music.setProgress(cp);
                     }
                 }
-            }).start();
+            });
+            setTimeThread.start();
         }
 
         // START_STICKY : 서비스가 강제종료되었을 경우 서비스를 재시작 하도록 설정
@@ -119,15 +130,13 @@ public class LocalMusicService extends Service
         //문제를 해결해주기 위한 방법이다. 즉, 음악 중지 버튼을 누른 경우에만 실제로 음악을 중지시켜주는 것이다.
         //플래그 값이 true인 경우에만
 
-        if(intent.getBooleanExtra(FLAG_MUSIC_STOP, false))
-        {//default 값이 false이니까 음악 중지를 누르지 않았다면 아래의 코드가 실행되지 않을 것이다.
-            if(mediaPlayer != null)
-            {
-                if(mediaPlayer.isPlaying())
-                {
+        if (intent.getBooleanExtra(FLAG_MUSIC_STOP, false)) {//default 값이 false이니까 음악 중지를 누르지 않았다면 아래의 코드가 실행되지 않을 것이다.
+            if (mediaPlayer != null) {
+                if (mediaPlayer.isPlaying()) {
                     mediaPlayer.stop();
                 }
                 mediaPlayer.release();
+                setTimeThread.interrupt();
                 mediaPlayer = null;
                 /*
                 onDestroy함수가 실행된다는 것은 localMusicService 객체가 소멸된다는 의미이다.
@@ -139,9 +148,7 @@ public class LocalMusicService extends Service
                 그래서 종료되기 전에 재실행 해줘야 한다(?????????????????)
                 */
             }
-        }
-        else
-        {//onDestroy 실행됨 --> 내가 음악 중지 버튼을 누른 것이 아닌데 onDestroy가 실행된 경우니까..?
+        } else {//onDestroy 실행됨 --> 내가 음악 중지 버튼을 누른 것이 아닌데 onDestroy가 실행된 경우니까..?
             // 브로드캐스트를 이용해서
             final Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(System.currentTimeMillis());
