@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     public static TextView tv_current_music;
     public static TextView tv_end_music;
 
+    public static int current = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         nv_navi.setNavigationItemSelectedListener(listener_navi_menu_click);
         btn_music_control.setOnClickListener(listener_music_control);
+
     }
 
     private View.OnClickListener listener_music_control = new View.OnClickListener() {
@@ -99,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
                 check = true;
                 btn_music_control.setText("♬ 중지");
                 checkLocalMusicIntent();
+                //musicIntent.putExtra("continue",sb_music.getProgress());
+                current = sb_music.getProgress();
                 startService(musicIntent);
             }else{
                 check = false;
@@ -168,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 
 
