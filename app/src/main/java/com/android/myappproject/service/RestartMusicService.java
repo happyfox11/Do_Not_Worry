@@ -32,7 +32,7 @@ public class RestartMusicService extends Service
     {
         String ChannelID = "default";
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "ChannelID");
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, ChannelID);
         builder.setSmallIcon(R.mipmap.ic_launcher);
         builder.setContentTitle(null);
         builder.setContentText(null);

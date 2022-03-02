@@ -36,8 +36,6 @@ public class LevelTabActivity extends AppCompatActivity {
 
     private TabAdapter tabAdapter;
 
-    private ImageButton btn_back;
-
     private List<Fragment> fragmentList;
 
     private TabOneFragment fragment_tab1;
@@ -157,7 +155,6 @@ public class LevelTabActivity extends AppCompatActivity {
 
     private void addListener()
     {
-        btn_back.setOnClickListener(listener_back);
 
         tl_tab.addOnTabSelectedListener(listener_tab_click);
     }
@@ -183,14 +180,6 @@ public class LevelTabActivity extends AppCompatActivity {
         }
     };
 
-    private View.OnClickListener listener_back = new View.OnClickListener()
-    {
-        @Override
-        public void onClick(View v)
-        {
-            finish();
-        }
-    };
 
     private void receiveItemList(){
         Intent intent = getIntent();

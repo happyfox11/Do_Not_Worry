@@ -8,9 +8,9 @@
     <item
         android:id="@+id/icon_info"
         android:icon="@drawable/info_icon"
-        android:title="도움 정보" />
+        android:title="치료 정보" />
     <item
         android:id="@+id/icon_tel"
         android:icon="@drawable/tel_icon"
-        android:title="도움 전화" />
+        android:title="도움 기관" />
 </menu>

@@ -1,7 +1,6 @@
 package com.android.myappproject.activity;
 
 import static com.android.myappproject.service.LocalMusicService.FLAG_MUSIC_STOP;
-import static com.android.myappproject.service.LocalMusicService.mediaPlayer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +14,6 @@ import android.content.Intent;
 
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -153,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(activity, "Tel Menu Click!", Toast.LENGTH_SHORT).show();
                 layout_navi.closeDrawer(GravityCompat.START);
 
-                Intent intent = new Intent(activity, TelMainActivity.class);
+                Intent intent = new Intent(activity, HospitalMainActivity.class);
                 startActivity(intent);
 
                 return true;
