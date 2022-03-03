@@ -151,11 +151,12 @@ public class TabThreeFragment extends Fragment
                         ImageView imageView = v.findViewWithTag("img_photo"+tag);
                         imageView.setImageURI(photoUri);
                         Log.i("photo", "setImage tag:"+tag);
+                        Log.i("imageView.getWidth()", String.valueOf(imageView.getWidth()));
 
 
-                        if(imageView.getWidth() > 0){
+                        /*if(imageView.getWidth() > 0){
                             flag[tag] = true;
-                        }
+                        }*/
                     }
                 };
                 cameraLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), cameraResultCallback);
@@ -176,11 +177,20 @@ public class TabThreeFragment extends Fragment
             public void onClick(View view) {
                 Boolean next = true;
 
-                for(int f= 0; f<itemList.size(); f++){
+/*                for(int f= 0; f<itemList.size(); f++){
                     Log.i("flag", flag[f]+","+f);
                     if(flag[f] == false){
                         next = false;
                        break;
+                    }
+                }*/
+
+                for(int f=0 ;f<=tag; f++){
+                    ImageView imageView = v.findViewWithTag("img_photo"+tag);
+
+                    if(imageView.getWidth() <= 0){
+                        next = false;
+                        break;
                     }
                 }
 
