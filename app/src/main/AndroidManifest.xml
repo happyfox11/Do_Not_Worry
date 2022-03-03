@@ -3,7 +3,7 @@
     package="com.android.myappproject">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/ic_main_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAppProject">
-
+        <activity
+            android:name=".activity.PreviousMainActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.ReportLevelActivity"
             android:exported="false" />
@@ -37,13 +39,15 @@
             android:name=".activity.HospitalMainActivity"
             android:exported="false" />
         <!--
-
         android:theme="@style/Theme.AppCompat.NoActionBar">
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         -->
         <activity
             android:name=".activity.LevelMainActivity"
-            android:exported="false"/>
+            android:exported="false" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false"></activity>
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">
@@ -52,11 +56,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity android:name=".activity.LoginActivity"
-            android:exported="false">
-
         </activity>
 
         <service
@@ -72,10 +71,7 @@
             android:enabled="true"
             android:exported="true" />
 
-
         <receiver android:name=".receiver.MusicAlarmReceiver" />
-
-
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.android.myappproject.R;
+import com.android.myappproject.db.Database;
 import com.android.myappproject.fragment.BarFragment;
 
 public class LevelMainActivity extends AppCompatActivity {
@@ -42,11 +43,18 @@ public class LevelMainActivity extends AppCompatActivity {
     private void init(){
         activity = this;
 
-        btn_prev_db = findViewById(R.id.btn_lv1);
+        btn_prev_db = findViewById(R.id.btn_select);
         btn_select_level = findViewById(R.id.btn_lv2);
         btn_level_test = findViewById(R.id.btn_lv3);
 
         barFragment = new BarFragment();
+
+        Database db = new Database(activity);
+        db.createDatabase("prev.db");
+        db.createTable("rec");
+//        db.insertRecord();
+//        db.executeQuery();
+
     }
 
     private void setting(){
@@ -64,7 +72,10 @@ public class LevelMainActivity extends AppCompatActivity {
     private View.OnClickListener listener_prev_db = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            Intent intent = new Intent(activity, PreviousMainActivity.class);
+            startActivity(intent);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            finish();
         }
     };
 
@@ -88,5 +99,10 @@ public class LevelMainActivity extends AppCompatActivity {
         }
     };
 
+
+    private void receiveDbRec(){
+
+
+    }
 
 }

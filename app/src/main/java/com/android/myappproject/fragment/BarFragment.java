@@ -78,6 +78,9 @@ public class BarFragment extends Fragment
         return v;
     }
 
+    public String getUser(){
+        return tv_user.getText().toString();
+    }
 
 
 }

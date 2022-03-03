@@ -41,7 +41,7 @@ public class ReportLevelActivity extends AppCompatActivity {
         activity = this;
         //btn_report_back = findViewById(R.id.btn_back);
         btn_lv_num = findViewById(R.id.btn_lv_num);
-        btn_back_home = findViewById(R.id.btn_lv1);
+        btn_back_home = findViewById(R.id.btn_select);
 
         barFragment = new BarFragment();
     }

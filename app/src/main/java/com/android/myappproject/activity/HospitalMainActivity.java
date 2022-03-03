@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 
@@ -112,7 +113,6 @@ public class HospitalMainActivity extends AppCompatActivity {
             for(int i=0;i<memberList.size();i++){
                 customAdapter.addItem(memberList.get(i));
             }
-            customAdapter.notifyDataSetChanged();
 
             memberList.clear();
         }

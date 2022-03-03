@@ -22,6 +22,7 @@ import com.android.myappproject.fragment.TabThreeFragment;
 import com.android.myappproject.fragment.TabTwoFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;

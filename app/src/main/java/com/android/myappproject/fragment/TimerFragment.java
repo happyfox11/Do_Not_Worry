@@ -4,31 +4,19 @@ import static java.lang.Thread.sleep;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import com.android.myappproject.R;
-import com.android.myappproject.activity.LevelMainActivity;
-
-import org.w3c.dom.Text;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -138,7 +126,7 @@ public class TimerFragment extends Fragment
     {
         View v = inflater.inflate(R.layout.fragment_timer, container, false);
 
-        tv_time = v.findViewById(R.id.tv_time);
+        tv_time = v.findViewById(R.id.tv_checklist);
 
 
         handlerTask = new HandlerTask(tv_time, count);

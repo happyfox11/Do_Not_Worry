@@ -39,6 +39,9 @@ import androidx.fragment.app.Fragment;
 import com.android.myappproject.R;
 import com.android.myappproject.activity.LevelMainActivity;
 import com.android.myappproject.activity.ManageItemListActivity;
+import com.android.myappproject.db.Database;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -150,7 +153,7 @@ public class TabThreeFragment extends Fragment
                         Log.i("photo", "setImage tag:"+tag);
 
 
-                        if(imageView.getWidth() != 0){
+                        if(imageView.getWidth() > 0){
                             flag[tag] = true;
                         }
                     }
@@ -174,13 +177,35 @@ public class TabThreeFragment extends Fragment
                 Boolean next = true;
 
                 for(int f= 0; f<itemList.size(); f++){
+                    Log.i("flag", flag[f]+","+f);
                     if(flag[f] == false){
                         next = false;
-                        break;
+                       break;
                     }
                 }
 
                 if(next == true){
+                    SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd");
+                    SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss");
+                    Date now = new Date();
+                    String date = sdf1.format(now);
+                    String time = sdf2.format(now);
+
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    String name = "";
+                    if(user != null){
+                        String user_email = user.getEmail();
+                        name = user_email.split("@")[0];
+                    }else{
+                        name = "user";
+                    }
+
+                    Log.i("username", String.valueOf(name));
+
+                    Database db = new Database(getActivity());
+                    db.insertRecord(name, date, time, itemList.toString());
+
+
                     Intent intent = new Intent(getContext(), LevelMainActivity.class);
                     startActivity(intent);
                     getActivity().finish();

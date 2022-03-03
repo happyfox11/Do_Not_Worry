@@ -47,7 +47,7 @@ public class SelectLevelActivity extends AppCompatActivity {
     private void init(){
         activity = this;
         //btn_back = findViewById(R.id.btn_test_back);
-        btn_lv1 = findViewById(R.id.btn_lv1);
+        btn_lv1 = findViewById(R.id.btn_select);
         btn_lv2 = findViewById(R.id.btn_lv2);
         btn_lv3 = findViewById(R.id.btn_lv3);
 
