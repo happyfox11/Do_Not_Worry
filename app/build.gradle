@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.android.myappproject"
-        minSdk 28
+        minSdk 23
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -54,4 +54,7 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.15'
 }
