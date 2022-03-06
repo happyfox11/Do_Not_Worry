@@ -27,7 +27,7 @@ public class ApiExamSearch {
 
     public void search(String detail) {
         String clientId = "1N9vFwnAE4PhBoaIw_JG"; //애플리케이션 클라이언트 아이디값"
-        String clientSecret = "KX0QiZ8p4t"; //애플리케이션 클라이언트 시크릿값"
+        String clientSecret = "8IcuEorjcX"; //애플리케이션 클라이언트 시크릿값"
 
 
         String text = null;

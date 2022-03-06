@@ -1,6 +1,7 @@
 package com.android.myappproject.activity;
 
 import static com.android.myappproject.service.LocalMusicService.FLAG_MUSIC_STOP;
+import static com.android.myappproject.service.LocalMusicService.mediaPlayer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.content.Intent;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -91,24 +93,44 @@ public class MainActivity extends AppCompatActivity {
         nv_navi.setNavigationItemSelectedListener(listener_navi_menu_click);
         btn_music_control.setOnClickListener(listener_music_control);
 
+        sb_music.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser)
+                    mediaPlayer.seekTo(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
     }
 
     private View.OnClickListener listener_music_control = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             if(check == false){
+                sb_music.setEnabled(true);
                 check = true;
                 btn_music_control.setText("♬ 중지");
                 checkLocalMusicIntent();
                 //musicIntent.putExtra("continue",sb_music.getProgress());
                 current = sb_music.getProgress();
                 startService(musicIntent);
+
             }else{
+                sb_music.setEnabled(false);
                 check = false;
                 btn_music_control.setText("♬ 재생");
                 checkLocalMusicIntent();
                 LocalMusicService.intent.putExtra(FLAG_MUSIC_STOP, true);
                 stopService(musicIntent);
+
             }
         }
     };

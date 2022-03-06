@@ -27,7 +27,7 @@ public class HospitalSearchApi
 	private final String clientId = "1N9vFwnAE4PhBoaIw_JG";
 
 	// 네이버 검색 API Client Secret
-	private final String clientSecret = "KX0QiZ8p4t";
+	private final String clientSecret = "8IcuEorjcX";
 
 	public void getSearchData(List<CustomHospitalVo> hospitalList, String searchTarget)
 	{
