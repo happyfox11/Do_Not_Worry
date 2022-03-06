@@ -12,6 +12,6 @@
         android:layout_height="150dp"
         android:layout_marginTop="50dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/app_name" />
+        app:srcCompat="@drawable/app_name2" />
 
 </LinearLayout>

@@ -9,13 +9,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_main_launcher"
+        android:icon="@mipmap/ic_launcher_main"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_main_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_main_round"
         android:supportsRtl="true"
-        android:hardwareAccelerated="false"
+
         android:largeHeap="true"
         android:theme="@style/Theme.MyAppProject">
+        <!--android:hardwareAccelerated="false" 설정하면 로그인화면이 심하게 버벅거림-->
         <activity
             android:name=".activity.PreviousMainActivity"
             android:exported="false" />
@@ -48,10 +49,10 @@
             android:name=".activity.LevelMainActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.MainActivity"
             android:exported="false"></activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
