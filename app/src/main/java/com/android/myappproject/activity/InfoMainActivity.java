@@ -82,14 +82,18 @@ public class InfoMainActivity extends AppCompatActivity {
 
         pager.setOffscreenPageLimit(3);
 
+        infoPagerAdapter.addItem(new Info6_Fragment());
         infoPagerAdapter.addItem(info1_Fragment);
         infoPagerAdapter.addItem(info2_Fragment);
         infoPagerAdapter.addItem(info3_Fragment);
         infoPagerAdapter.addItem(info4_Fragment);
         infoPagerAdapter.addItem(info5_Fragment);
         infoPagerAdapter.addItem(info6_Fragment);
+        infoPagerAdapter.addItem(new Info1_Fragment());
 
         pager.setAdapter(infoPagerAdapter);
+
+        pager.setCurrentItem(1, false);
     }
 
 
@@ -97,26 +101,33 @@ public class InfoMainActivity extends AppCompatActivity {
         btn_prev_info.setOnClickListener(listener_prev);
         btn_next_info.setOnClickListener(listener_next);
 
-        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
+        {
+            private int currPosistion = 1;
+
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
+            {
+
             }
 
             @Override
-            public void onPageSelected(int position) {
+            public void onPageSelected(int position)
+            {
+                currPosistion = position;
+
+                if(currPosistion + 1 == infoPagerAdapter.getCount())
+                {
+                    pager.setCurrentItem(1, false);
+                }
+                else if(currPosistion == 0)
+                {
+                    pager.setCurrentItem(infoPagerAdapter.getCount() - 2, false);
+                }
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-//                //순환 뷰 페이저를 만들고 싶음
-//                if (state == ViewPager.SCROLL_STATE_IDLE) {
-//                    if (pager.getCurrentItem() == 0) {
-//                        pager.setCurrentItem(infoPagerAdapter.getCount(), false);
-//
-//                    } else if (pager.getCurrentItem() == 5) {
-//                        pager.setCurrentItem(-1, false);
-//                    }
-//                }
 
                 setProgressBar();
             }
@@ -148,7 +159,7 @@ public class InfoMainActivity extends AppCompatActivity {
     };
 
     private void setProgressBar(){
-        pg_bar.setProgress((pager.getCurrentItem()+1)*100/6);
+        pg_bar.setProgress((pager.getCurrentItem() - 1)*100/5);
     }
 
 
