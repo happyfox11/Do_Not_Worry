@@ -1,5 +1,6 @@
 package com.android.myappproject.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.android.myappproject.R;
@@ -29,13 +32,15 @@ public class TabOneFragment extends Fragment
     private ArrayList<String> itemList;
     private Button btn_complete;
     private Button btn_new;
+    private TimerFragment timerFragment;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View v = inflater.inflate(R.layout.fragment_tab_one, container, false);
-
+        timerFragment = new TimerFragment();
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.layout_timerfragment, timerFragment).commit();
         LinearLayout layout = v.findViewById(R.id.layout_list);
 
         btn_new = v.findViewById(R.id.btn_new);

@@ -15,11 +15,24 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.fragment.app.FragmentContainerView
+            <!--<androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainerView"
                 android:name="com.android.myappproject.fragment.TimerFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" />-->
+
+            <LinearLayout
+                android:id="@+id/layout_timerfragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <fragment
+                    android:id="@+id/timerfrag"
+                    android:name="com.android.myappproject.fragment.TimerFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
 
 
 

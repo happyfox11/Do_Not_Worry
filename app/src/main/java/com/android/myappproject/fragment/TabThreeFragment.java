@@ -56,6 +56,8 @@ public class TabThreeFragment extends Fragment
     private Button btn_complete;
     private Button btn_new3;
     private Button btn_camera;
+    private TimerFragment timerFragment;
+
     int tag= 0;
     private Boolean[] flag;
 
@@ -69,6 +71,9 @@ public class TabThreeFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_tab_three, container, false);
+
+        timerFragment = new TimerFragment();
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.layout_timerfragment, timerFragment).commit();
 
         LinearLayout layout = v.findViewById(R.id.layout_list);
 

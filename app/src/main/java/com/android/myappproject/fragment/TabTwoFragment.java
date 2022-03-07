@@ -35,11 +35,15 @@ public class TabTwoFragment extends Fragment
     private Button btn_complete;
     private Button btn_new2;
     private int i = 0;
+    private TimerFragment timerFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View v = inflater.inflate(R.layout.fragment_tab_two, container, false);
+
+        timerFragment = new TimerFragment();
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.layout_timerfragment, timerFragment).commit();
 
         btn_new2 = v.findViewById(R.id.btn_new2);
         btn_complete = v.findViewById(R.id.btn_complete);
