@@ -2,7 +2,6 @@ package com.android.myappproject.fragment;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import com.android.myappproject.R;
 import com.android.myappproject.activity.LevelMainActivity;
@@ -32,7 +30,7 @@ import java.util.Date;
 public class TabTwoFragment extends Fragment
 {
     private ArrayList<String> itemList;
-    private Button btn_complete;
+    private Button btn_complete2;
     private Button btn_new2;
     private int i = 0;
     private TimerFragment timerFragment;
@@ -46,7 +44,7 @@ public class TabTwoFragment extends Fragment
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.layout_timerfragment, timerFragment).commit();
 
         btn_new2 = v.findViewById(R.id.btn_new2);
-        btn_complete = v.findViewById(R.id.btn_complete);
+        btn_complete2 = v.findViewById(R.id.btn_complete2);
 
         LinearLayout layout = v.findViewById(R.id.layout_list);
 
@@ -93,11 +91,11 @@ public class TabTwoFragment extends Fragment
             textView.setText("체크 리스트 항목이 선택되지 않았습니다. 뒤로 되돌아가서 체크 리스트를 생성해주세요.");
             layout.addView(textView);
 
-            btn_complete.setVisibility(View.GONE);
+            btn_complete2.setVisibility(View.GONE);
             btn_new2.setVisibility(View.VISIBLE);
         }
 
-        btn_complete.setOnClickListener(new View.OnClickListener() {
+        btn_complete2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Boolean flag = true;

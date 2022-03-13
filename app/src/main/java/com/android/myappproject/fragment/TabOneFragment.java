@@ -1,6 +1,5 @@
 package com.android.myappproject.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,15 +10,12 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.android.myappproject.R;
 import com.android.myappproject.activity.LevelMainActivity;
 import com.android.myappproject.activity.ManageItemListActivity;
 import com.android.myappproject.db.Database;
-import com.android.myappproject.db.DatabaseHelper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

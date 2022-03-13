@@ -1,9 +1,7 @@
 package com.android.myappproject.fragment;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -20,8 +18,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -32,7 +28,6 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
@@ -53,12 +48,12 @@ import java.util.Date;
 public class TabThreeFragment extends Fragment
 {
     private ArrayList<String> itemList;
-    private Button btn_complete;
+    private Button btn_complete3;
     private Button btn_new3;
     private Button btn_camera;
     private TimerFragment timerFragment;
 
-    int tag= 0;
+    int tag=0;
     private Boolean[] flag;
 
     private final int REQUEST_WRITE_EXTERNAL_STORAGE = 1005;
@@ -78,7 +73,7 @@ public class TabThreeFragment extends Fragment
         LinearLayout layout = v.findViewById(R.id.layout_list);
 
         btn_new3 = v.findViewById(R.id.btn_new3);
-        btn_complete = v.findViewById(R.id.btn_complete);
+        btn_complete3 = v.findViewById(R.id.btn_complete3);
 
         Bundle bundle = getArguments();
         itemList = bundle.getStringArrayList("itemList");
@@ -119,6 +114,7 @@ public class TabThreeFragment extends Fragment
 
                 ImageView img_photo = new ImageView(getContext());
                 img_photo.setTag("img_photo"+i);
+                Log.i("adfaf","img_photo"+i);
 
                 btn_camera = new Button(getContext());
                 btn_camera.setTag(i);
@@ -172,12 +168,12 @@ public class TabThreeFragment extends Fragment
             textView.setText("체크 리스트 항목이 선택되지 않았습니다. 뒤로 되돌아가서 체크 리스트를 생성해주세요.");
             layout.addView(textView);
 
-            btn_complete.setVisibility(View.GONE);
+            btn_complete3.setVisibility(View.GONE);
             btn_new3.setVisibility(View.VISIBLE);
         }
 
 
-        btn_complete.setOnClickListener(new View.OnClickListener() {
+        btn_complete3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Boolean next = true;
@@ -190,9 +186,9 @@ public class TabThreeFragment extends Fragment
                     }
                 }*/
 
-                for(int f=0 ;f<=tag; f++){
-                    ImageView imageView = v.findViewWithTag("img_photo"+tag);
-
+                for(int f=0 ;f<itemList.size(); f++){
+                    ImageView imageView = v.findViewWithTag("img_photo"+f);
+                    Log.i("adfaf",itemList.size()+"ok");
                     if(imageView.getWidth() <= 0){
                         next = false;
                         break;
