@@ -70,8 +70,8 @@ public class TimerFragment extends Fragment
                     if(sec<10) ss = "0"+ss;
 
                     if(count == 180){
-                        NotificationCompat.Builder builder = getDefaultBuilder();
                         notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+                        NotificationCompat.Builder builder = getDefaultBuilder();
                         notificationManager.notify(NOTIFICATION_ID, builder.build());
                         //Log.i("timer", "getActivity(): "+getActivity());
                     }
