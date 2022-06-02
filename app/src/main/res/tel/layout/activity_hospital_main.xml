@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/layout_fragment"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="55dp"
         android:background="#F34A8716"
         android:orientation="horizontal">
 
@@ -28,6 +28,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_rect"
+            android:backgroundTint="#C6DCAC"
             android:orientation="horizontal">
 
             <TextView
@@ -35,7 +38,6 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:background="#C6DCAC"
                 android:gravity="center"
                 android:text="지역명"
                 android:textSize="20sp" />
@@ -44,7 +46,11 @@
                 android:id="@+id/et_region"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="6"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="6.3"
+                android:background="#fff"
                 android:ems="10"
                 android:fontFamily="@font/font_custom"
                 android:hint="가까운 지역을 입력"
@@ -55,8 +61,9 @@
                 android:id="@+id/btn_region"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#3C5320"
+                android:layout_weight="0.7"
+                android:background="@drawable/round_rect_right"
+                android:backgroundTint="#3C5320"
                 android:gravity="center"
                 android:text="확인"
                 android:textColor="#fff" />
@@ -71,7 +78,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
-            android:text="가까운 지역을 작성해주시면, 가까운 병원 최대 5곳의 정보를 알려드려요!"
+            android:text="★ 가까운 지역을 작성해주시면, 가까운 병원 최대 5곳의 정보를 알려드려요!"
             android:textSize="20sp" />
 
         <ListView

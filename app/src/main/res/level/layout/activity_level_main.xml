@@ -42,7 +42,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:background="#538716"
+            android:background="@drawable/round_rect"
+            android:backgroundTint="#538716"
             android:text="이전 정보 조회"
             android:textColor="#fff"
             android:textSize="30sp" />
@@ -54,7 +55,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:background="#33570A"
+            android:background="@drawable/round_rect"
+            android:backgroundTint="#33570A"
             android:text="레벨 선택"
             android:textColor="#fff"
             android:textSize="30sp" />
@@ -66,7 +68,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:background="#274009"
+            android:background="@drawable/round_rect"
+            android:backgroundTint="#274009"
             android:text="레벨 테스트"
             android:textColor="#fff"
             android:textSize="30sp" />

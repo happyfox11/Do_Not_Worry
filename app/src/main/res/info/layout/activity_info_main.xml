@@ -39,9 +39,7 @@
             android:layout_width="20dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#284308"
-            android:text="☜"
-            android:textColor="#fff"
+            android:text="◀"
             android:textSize="15sp" />
 
         <ProgressBar
@@ -56,9 +54,7 @@
             android:layout_width="20dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#284308"
-            android:text="☞"
-            android:textColor="#fff"
+            android:text="▶"
             android:textSize="15sp" />
 
     </LinearLayout>
