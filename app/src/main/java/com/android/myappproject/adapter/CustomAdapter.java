@@ -1,6 +1,7 @@
 package com.android.myappproject.adapter;
 
 import android.app.Activity;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,7 +76,7 @@ public class CustomAdapter extends BaseAdapter
 
 
         holder.tv_custom_item_address.setText(memberList.get(position).getAddress());
-        holder.tv_custom_item_name.setText(memberList.get(position).getName());
+        holder.tv_custom_item_name.setText(Html.fromHtml(memberList.get(position).getName()));
         holder.tv_custom_item_homepage.setText(memberList.get(position).getHomepage());
 
 
