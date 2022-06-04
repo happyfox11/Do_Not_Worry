@@ -44,6 +44,9 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/round_rect"
             android:backgroundTint="#538716"
+            android:drawableLeft="@drawable/calendar_icon"
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp"
             android:text="이전 정보 조회"
             android:textColor="#fff"
             android:textSize="30sp" />
@@ -57,6 +60,9 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/round_rect"
             android:backgroundTint="#33570A"
+            android:drawableLeft="@drawable/level_icon"
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp"
             android:text="레벨 선택"
             android:textColor="#fff"
             android:textSize="30sp" />
@@ -70,6 +76,9 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/round_rect"
             android:backgroundTint="#274009"
+            android:drawableLeft="@drawable/test_icon"
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp"
             android:text="레벨 테스트"
             android:textColor="#fff"
             android:textSize="30sp" />
