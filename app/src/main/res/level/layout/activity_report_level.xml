@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/layout_fragment"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="55dp"
         android:background="#F34A8716"
         android:orientation="horizontal">
 
