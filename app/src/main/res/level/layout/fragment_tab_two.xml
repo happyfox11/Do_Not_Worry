@@ -23,6 +23,7 @@
                 android:id="@+id/layout_timerfragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="15dp"
                 android:orientation="horizontal">
 
                 <fragment
@@ -32,53 +33,60 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:gravity="center"
-                android:text="------체크 리스트------"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:text="아래의 체크리스트의 각각의 항목에 대해 눈으로 확인하고, 우측의 체크박스에 체크합니다. 모두 체크를 한 후에 '모든 확인 완료' 버튼을 누릅니다." />
-
             <LinearLayout
-                android:id="@+id/layout_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="#7979ED"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_complete2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:background="#284308"
-                android:textColor="#fff"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:text="모든 확인 완료!" />
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:gravity="center"
+                    android:text="------체크 리스트------"
+                    android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btn_new2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#284308"
-                android:text="체크 리스트 생성하러가기"
-                android:textColor="#fff"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:visibility="gone" />
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="아래의 체크리스트의 각각의 항목에 대해 눈으로 확인하고, 우측의 체크박스에 체크합니다. 모두 체크를 한 후에 '모든 확인 완료' 버튼을 누릅니다." />
+
+                <LinearLayout
+                    android:id="@+id/layout_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#7979ED"
+                    android:orientation="vertical"></LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_complete2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/round_rect"
+                    android:backgroundTint="#284308"
+                    android:text="모든 확인 완료!"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/btn_new2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#284308"
+                    android:text="체크 리스트 생성하러가기"
+                    android:textColor="#fff"
+                    android:visibility="gone" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

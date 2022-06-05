@@ -25,6 +25,7 @@ android:orientation="vertical">
             android:id="@+id/layout_timerfragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="15dp"
             android:orientation="horizontal">
 
             <fragment
@@ -34,53 +35,61 @@ android:orientation="vertical">
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:text="------확인 리스트------"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="모든 확인 리스트의 내용들에 대해서 사진을 찍어 확실히 확인한 후, '모든 확인 완료' 버튼을 누릅니다." />
-
         <LinearLayout
-            android:id="@+id/layout_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:background="#ADEC64"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_complete3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:background="#284308"
-            android:textColor="#fff"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="모든 확인 완료!" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:text="------확인 리스트------"
+                android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/btn_new3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#284308"
-            android:textColor="#fff"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:text="체크 리스트 생성하러가기"
-            android:visibility="gone" />
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="모든 확인 리스트의 내용들에 대해서 사진을 찍어 확실히 확인한 후, '모든 확인 완료' 버튼을 누릅니다." />
+
+            <LinearLayout
+                android:id="@+id/layout_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#ADEC64"
+                android:orientation="vertical"></LinearLayout>
+
+            <Button
+                android:id="@+id/btn_new3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#284308"
+                android:text="체크 리스트 생성하러가기"
+                android:textColor="#fff"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_complete3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/round_rect"
+                android:backgroundTint="#284308"
+                android:text="모든 확인 완료!"
+                android:textColor="#fff" />
+
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>
