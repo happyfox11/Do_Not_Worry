@@ -16,7 +16,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +45,7 @@ public class TimerFragment extends Fragment
     private TextView tv_time;
     private int count;
     private Boolean flag = false;
+    private ImageView iv_shake_clock;
 
     private static final int NOTIFICATION_ID = 75;
     private NotificationManager notificationManager;
@@ -179,6 +183,10 @@ public class TimerFragment extends Fragment
 
             }
         });
+
+        Animation shake = AnimationUtils.loadAnimation(getContext(),R.anim.shake2);
+        iv_shake_clock = v.findViewById(R.id.iv_shake_clock);
+        iv_shake_clock.startAnimation(shake);
 
 
         return v;
