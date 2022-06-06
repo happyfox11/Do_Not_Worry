@@ -84,6 +84,7 @@ android:orientation="vertical">
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="15dp"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/round_rect"
                 android:backgroundTint="#284308"
                 android:text="모든 확인 완료!"
