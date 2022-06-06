@@ -38,33 +38,43 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="15dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:gravity="center"
-                    android:text="------확인 리스트------"
-                    android:textSize="20sp" />
+                    android:drawableLeft="@drawable/test_icon2"
+                    android:drawableTint="#D14E4E"
+                    android:gravity="left"
+                    android:text="  확인 리스트"
+                    android:textSize="30dp" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#9C9393" />
 
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:text="눈으로 모든 확인 리스트의 내용들을 확실히 확인한 후, '모든 확인 완료' 버튼을 누릅니다." />
+                    android:text="※ 눈으로 모든 확인 리스트의 내용들을 확실히 확인한 후, '모든 확인 완료' 버튼을 누릅니다." />
 
                 <LinearLayout
                     android:id="@+id/layout_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
                     android:background="#E69696"
-                    android:orientation="vertical"></LinearLayout>
+                    android:orientation="vertical"
+                    android:padding="10dp"></LinearLayout>
 
                 <Button
                     android:id="@+id/btn_new"
@@ -81,9 +91,8 @@
                     android:id="@+id/btn_complete"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="50dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="30dp"
                     android:background="@drawable/round_rect"
                     android:backgroundTint="#284308"
                     android:text="모든 확인 완료!"

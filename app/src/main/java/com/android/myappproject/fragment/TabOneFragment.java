@@ -50,6 +50,7 @@ public class TabOneFragment extends Fragment
             for(int i=0 ;i<itemList.size(); i++){
                 TextView textView = new TextView(getContext());
                 textView.setText(" ★ "+itemList.get(i));
+                textView.setTextSize((int)getResources().getDimension(R.dimen.frag_one_tv_size));
                 layout.addView(textView);
             }
         }else{
