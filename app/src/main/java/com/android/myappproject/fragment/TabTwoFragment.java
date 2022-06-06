@@ -61,7 +61,7 @@ public class TabTwoFragment extends Fragment
                 LinearLayout l1 = new LinearLayout(getContext());
                 l1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f));
                 l1.setOrientation(LinearLayout.HORIZONTAL);
-                l1.setBackgroundColor(Color.WHITE);
+                //l1.setBackgroundColor(Color.WHITE);
 
                 LinearLayout l2 = new LinearLayout(getContext());
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 8f);
@@ -72,11 +72,16 @@ public class TabTwoFragment extends Fragment
 
                 TextView tv = new TextView(getContext());
                 tv.setText(" ★ "+itemList.get(i));
+                tv.setTextSize((int)getResources().getDimension(R.dimen.frag_one_tv_size));
 
                 CheckBox cb = new CheckBox(getContext());
                 String tag = "cb"+String.valueOf(i);
                 cb.setTag(tag);
                 cb.setGravity(Gravity.RIGHT);
+
+                View view = new View(getContext());
+                view.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int) getResources().getDimension(R.dimen.view_height)));
+                view.setBackgroundColor(Color.rgb(115, 122, 222));
 
                 l1.addView(tv);
                 l2.addView(cb);
@@ -85,6 +90,7 @@ public class TabTwoFragment extends Fragment
                 row.addView(l2);
 
                 layout.addView(row);
+                layout.addView(view);
             }
         }else{
             TextView textView = new TextView(getContext());
