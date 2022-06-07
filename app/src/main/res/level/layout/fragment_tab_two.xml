@@ -63,7 +63,7 @@
                     android:id="@+id/textView10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="아래의 체크리스트의 각각의 항목에 대해 눈으로 확인하고, 우측의 체크박스에 체크합니다. 모두 체크를 한 후에 '모든 확인 완료' 버튼을 누릅니다." />
+                    android:text="※ 아래의 체크리스트의 각각의 항목에 대해 눈으로 확인하고, 우측의 체크박스에 체크합니다. 모두 체크를 한 후에 '모든 확인 완료' 버튼을 누릅니다." />
 
                 <LinearLayout
                     android:id="@+id/layout_list"

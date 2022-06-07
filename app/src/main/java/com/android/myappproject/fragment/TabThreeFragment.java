@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -50,7 +51,7 @@ public class TabThreeFragment extends Fragment
     private ArrayList<String> itemList;
     private Button btn_complete3;
     private Button btn_new3;
-    private Button btn_camera;
+    private ImageButton btn_camera;
     private TimerFragment timerFragment;
 
     int tag=0;
@@ -111,18 +112,23 @@ public class TabThreeFragment extends Fragment
 
                 TextView tv = new TextView(getContext());
                 tv.setText(" ★ "+itemList.get(i));
+                tv.setTextSize((int)getResources().getDimension(R.dimen.frag_one_tv_size));
+                tv.setTextColor(Color.WHITE);
 
                 ImageView img_photo = new ImageView(getContext());
                 img_photo.setTag("img_photo"+i);
+                img_photo.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 Log.i("adfaf","img_photo"+i);
 
-                btn_camera = new Button(getContext());
+                btn_camera = new ImageButton(getContext());
                 btn_camera.setTag(i);
                 Log.i("photo", "Button New tag:"+btn_camera.getTag());
 
-                btn_camera.setText("사진 찍기");
-                btn_camera.setBackgroundColor(Color.rgb(40,67,8));
-                btn_camera.setTextColor(Color.WHITE);
+                btn_camera.setImageResource(R.drawable.camera_icon);
+                btn_camera.setBackgroundColor(Color.TRANSPARENT);
+                //btn_camera.setText("사진 촬영");
+                //btn_camera.setBackgroundColor(Color.rgb(40,67,8));
+                //btn_camera.setTextColor(Color.WHITE);
 
 
                 l1.addView(tv);
@@ -130,6 +136,9 @@ public class TabThreeFragment extends Fragment
 
                 r1.addView(l1);
                 r1.addView(l2);
+                r1.setGravity(Gravity.CENTER_VERTICAL);
+                r1.setPadding((int)getResources().getDimension(R.dimen.frag_one_tv_size),0,(int)getResources().getDimension(R.dimen.frag_one_tv_size),0);
+                r1.setBackgroundColor(Color.rgb(40,67,8));
                 r2.addView(img_photo);
 
                 set.addView(r1);
@@ -151,6 +160,7 @@ public class TabThreeFragment extends Fragment
                         //img_photo.setImageURI(photoUri);
                         ImageView imageView = v.findViewWithTag("img_photo"+tag);
                         imageView.setImageURI(photoUri);
+                        imageView.setRotation(90f);
                         Log.i("photo", "setImage tag:"+tag);
                         Log.i("imageView.getWidth()", String.valueOf(imageView.getWidth()));
 
