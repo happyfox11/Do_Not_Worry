@@ -38,74 +38,54 @@
         <Button
             android:id="@+id/btn_select"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="120dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/round_rect"
             android:backgroundTint="#538716"
-            android:drawableLeft="@drawable/level_icon"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:text="Level 1 : Easy"
+            android:drawableLeft="@drawable/level_icon_1"
+            android:elevation="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Level 1 : Easy\n한 번의 간단한 확인만으로도\n안심할 수 있는 단계"
             android:textColor="#fff"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="한 번의 간단한 확인만으로도 안심할 수 있는 단계" />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/btn_lv2"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="120dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/round_rect"
             android:backgroundTint="#33570A"
-            android:drawableLeft="@drawable/level_icon"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:text="Level 2 : Normal"
+            android:drawableLeft="@drawable/level_icon_2"
+            android:elevation="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Level 2 : Normal\n세부 항목 확인으로\n안심할 수 있는 단계"
             android:textColor="#fff"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="각각의 세부 항목에 대한 확인으로 안심할 수 있는 단계" />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/btn_lv3"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="120dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/round_rect"
             android:backgroundTint="#1C2E07"
-            android:drawableLeft="@drawable/level_icon"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:text="Level 3 : Hard"
+            android:drawableLeft="@drawable/level_icon_3"
+            android:elevation="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Level 3 : Hard\n세부 항목에 대한 확실한 확인으로\n안심할 수 있는 단계"
             android:textColor="#fff"
-            android:textSize="20sp" />
+            android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="각각의 세부 항목에 대한 확실한 확인을 통해 안심할 수 있는 단계" />
     </LinearLayout>
 
 </LinearLayout>
