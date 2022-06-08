@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.LinearLayout;
@@ -101,6 +102,8 @@ public class PreviousMainActivity extends AppCompatActivity {
             lv_layout.removeAllViews();
              if(result.size() > 0)
                  lv_title.setVisibility(View.VISIBLE);
+             else
+                 lv_title.setVisibility(View.GONE);
 
 
             for(Map.Entry<String,String> entry : result.entrySet()) {
@@ -115,21 +118,27 @@ public class PreviousMainActivity extends AppCompatActivity {
 
                 //
                 LinearLayout col1 = new LinearLayout(activity);
-                col1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 8f));
+                col1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 7f));
                 col1.setOrientation(LinearLayout.HORIZONTAL);
 
                 TextView time = new TextView(activity);
                 time.setText(s_time);
                 time.setTextColor(Color.RED);
+                time.setTextSize((int)getResources().getDimension(R.dimen.frag_one_tv_size));
+
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                params.setMargins(25,0,0,0);  // 왼쪽, 위, 오른쪽, 아래 순서입니다.
+                time.setLayoutParams(params);
 
                 //
                 LinearLayout col2 = new LinearLayout(activity);
-                col2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 2f));
+                col2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 3f));
                 col2.setOrientation(LinearLayout.HORIZONTAL);
 
                 TextView checklist = new TextView(activity);
                 checklist.setText(s_checklist);
                 checklist.setTextColor(Color.BLUE);
+                checklist.setTextSize((int)getResources().getDimension(R.dimen.frag_one_tv_size));
 
                 col1.addView(time);
                 col2.addView(checklist);
@@ -137,7 +146,13 @@ public class PreviousMainActivity extends AppCompatActivity {
                 row.addView(col1);
                 row.addView(col2);
 
+                View v1 = new View(activity);
+                v1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int) getResources().getDimension(R.dimen.view_height)));
+                v1.setBackgroundColor(Color.rgb(115, 122, 222));
+
+                lv_layout.setBackgroundColor(Color.rgb(220,220,220));
                 lv_layout.addView(row);
+                lv_layout.addView(v1);
             }
         }
     };
