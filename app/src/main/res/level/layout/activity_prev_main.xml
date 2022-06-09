@@ -22,12 +22,22 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="[이전 정보 조회]"
-        android:textSize="40sp" />
+        android:drawableLeft="@drawable/calendar_icon"
+        android:drawableTint="#676565"
+        android:gravity="left"
+        android:text="  이전 정보 조회"
+        android:textSize="35dp" />
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="#918E8E" />
 
     <ScrollView
         android:layout_width="match_parent"

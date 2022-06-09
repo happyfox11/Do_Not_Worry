@@ -22,12 +22,21 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="[레벨 추천]"
-        android:textSize="40sp" />
+        android:drawableLeft="@drawable/give_icon"
+        android:gravity="left"
+        android:text="  레벨 추천"
+        android:textSize="35dp" />
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="#918E8E" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,7 +63,7 @@
                 android:background="@drawable/round_rect"
                 android:backgroundTint="#FFC107"
                 android:textColor="#000000"
-                android:textSize="30dp" />
+                android:textSize="50dp" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -69,12 +78,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/round_rect"
                 android:backgroundTint="#284308"
-                android:padding="15dp"
+                android:padding="20dp"
                 android:text="안심 서비스 홈으로\n돌아가기"
                 android:textColor="#fff"
                 android:textSize="25dp" />

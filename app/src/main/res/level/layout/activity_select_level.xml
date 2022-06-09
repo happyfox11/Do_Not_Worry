@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/layout_fragment"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="55dp"
         android:background="#F34A8716"
         android:orientation="horizontal">
 
@@ -24,10 +24,22 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="[레벨 선택하기]"
-        android:textSize="40sp" />
+        android:drawableLeft="@drawable/level_icon"
+        android:drawableTint="#918E8E"
+        android:gravity="center|left"
+        android:text="  레벨 선택하기"
+        android:textSize="35dp" />
+
+    <View
+        android:id="@+id/view9"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#918E8E" />
 
     <LinearLayout
         android:layout_width="match_parent"

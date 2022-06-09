@@ -7,11 +7,10 @@
     android:orientation="vertical">
 
 
-
     <LinearLayout
         android:id="@+id/layout_fragment"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="55dp"
         android:background="#F34A8716"
         android:orientation="horizontal">
 
@@ -27,14 +26,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textView"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/list_icon"
+            android:gravity="left"
+            android:text="  체크 리스트 항목 관리"
+            android:textSize="35dp" />
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="[체크 리스트 항목 관리]"
-            android:gravity="center"
-            android:textSize="30sp"/>
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="#918E8E" />
 
     </LinearLayout>
 
@@ -131,7 +140,7 @@
         android:id="@+id/lv_array"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:listSelector="@drawable/list_button" >
+        android:listSelector="@drawable/list_button">
 
     </ListView>
 
