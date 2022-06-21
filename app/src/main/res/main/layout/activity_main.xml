@@ -56,62 +56,71 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="80dp"
                         android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/btn_music_control"
+                        <LinearLayout
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="2"
-                            android:background="#8BC34A"
-                            android:text="♬ 재생"
-                            android:textColor="#FFFFFF" />
+                            android:orientation="vertical">
 
-                        <SeekBar
-                            android:id="@+id/sb_music"
+                            <Button
+                                android:id="@+id/btn_music_control"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:background="@drawable/round_rect_left_bottom"
+                                android:backgroundTint="#8BC34A"
+                                android:text="♬ 재생"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="8"
-                            android:background="#DAECC6" />
-                    </LinearLayout>
+                            android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                            <SeekBar
+                                android:id="@+id/sb_music"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="#DAECC6" />
 
-                        <View
-                            android:id="@+id/view"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:background="@drawable/round_rect_left_bottom"
-                            android:backgroundTint="#8BC34A"
-                            android:paddingBottom="30dp" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/tv_current_music"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="4"
-                            android:background="#DAECC6"
-                            android:gravity="left|center_vertical"
-                            android:paddingLeft="10dp"
-                            android:paddingBottom="30dp"
-                            android:text="00:00" />
+                                <TextView
+                                    android:id="@+id/tv_current_music"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="#DAECC6"
+                                    android:backgroundTint="#DAECC6"
+                                    android:gravity="top|left"
+                                    android:paddingLeft="15dp"
+                                    android:text="00:00" />
 
-                        <TextView
-                            android:id="@+id/tv_end_music"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="4"
-                            android:background="@drawable/round_rect_right_bottom"
-                            android:backgroundTint="#DAECC6"
-                            android:gravity="right|center_vertical"
-                            android:paddingRight="10dp"
-                            android:paddingBottom="30dp"
-                            android:text="04:15" />
+                                <TextView
+                                    android:id="@+id/tv_end_music"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/round_rect_right_bottom"
+                                    android:backgroundTint="#DAECC6"
+                                    android:gravity="right|top"
+                                    android:paddingRight="15dp"
+                                    android:text="04:15" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>

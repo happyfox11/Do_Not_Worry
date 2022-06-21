@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setting() {
 
+        sb_music.setEnabled(false);
         setSupportActionBar(tb_navi);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_navi_menu);
