@@ -24,12 +24,12 @@ Don't worry about obsessive-compulsive disorder!
 2. 도움 정보  
   : 확인강박을 치료하기 위해 쉽게 따라할 수 있는 몇 가지 방법들을 제공한다.
 3. 도움 기관
-  : 도움을 받을 수 있는 기관의 정보를 제공한다.
+  : 도움을 받을 수 있는 기관의 정보를 제공한다.  
   
   
   
-1. 메인 화면 : Music Service  (permisson : FOREGROUND_SERVICE, MediaPlayer, Service, BroadcastReceiver, Disposable (Thread 역할))
-2. Timer Fragment : Notification(알림)  
+1. 메인 화면 : Music Service  (permisson : FOREGROUND_SERVICE, MediaPlayer, Service, BroadcastReceiver, Disposable (Thread 역할: BackgroundTask))
+2. Timer Fragment : Notification(알림)  & Disposable(Thread 역할: BackgroundTask)
 3. 도움 기관 : Naver Search API(permission:Internet), Custom ListView  
 4. 회원가입 및 로그인 : Firebase Authentication (Email & Password)  
 5. 도움 정보 : ViewPager & Fragment  
